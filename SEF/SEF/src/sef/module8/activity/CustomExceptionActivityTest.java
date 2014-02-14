@@ -7,17 +7,36 @@ public class CustomExceptionActivityTest {
 
 	//1 - Type main method and call validateUser() from it.
 	//Call this method with different names to test it 
-
-
-void validateUser(String name)
+		
+public static void main(String[]args){
+	CustomExceptionActivityTest customExceptionActivityTest = new CustomExceptionActivityTest();
+	
+	try{
+	test.validateUser("Paulo");
+	test.validateUser("Jose");
+	test.validateUser("Mike");
+	}catch (CustomExceptionActivity ex){
+		System.out.println(ex.getMesseger());
+	}
+}
+void validateUser(String name) throws CustomExceptionActivity{
 {
 	//array of names
 String []validUsers={"John","Mike","Shanti","Stacie"};
 //flag stores 1 if a match is found else it should remain 0 
-int flag=0;
-for(int i=0;i<4;i++)
-{
-	
+int flag = 0;
+for(int i=0;i<4;i++){
+	if(validUsers[i].equals(name)){
+		flag = 1;
+		}
+}
+	if(flag == 0){
+		throw new CustomExceptionActivity();
+	}else{
+		System.out.println("Welcome to Payroll program");
+		
+		throw new (CustomExceptionActivity);
+	}
 //2 - Write code to check if parameter name contains a value which is found in validUsers array and change flag's value accordingly 
 
 }
